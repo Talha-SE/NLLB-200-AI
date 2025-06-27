@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: nllb-200-ai
+    env: python
+    # Directory that contains app.py, requirements.txt, runtime.txt
+    rootDir: NLLB-200-AI
+
+    # Install all Python dependencies
+    buildCommand: pip install -r requirements.txt
+
+    # Start the service with Gunicorn, binding to the port Render provides
+    startCommand: gunicorn --bind 0.0.0.0:$PORT app:app
+
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.10"
+      - key: FLASK_ENV
+        value: "production"
