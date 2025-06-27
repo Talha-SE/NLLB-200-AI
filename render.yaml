@@ -3,6 +3,6 @@ services:
     name: nllb-200-ai
     env: python
     rootDir: NLLB-200-AI
-    pythonVersion: "3.10"       # ← add this line
+    pythonVersion: "3.10.13"
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn --bind 0.0.0.0:$PORT app:app
