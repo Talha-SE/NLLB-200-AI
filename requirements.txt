@@ -1,4 +1,4 @@
 flask==2.3.3
 transformers==4.40.0
-torch==2.5.1
-sentencepiece==0.1.99
+torch==2.7.1
+sentencepiece @ https://files.pythonhosted.org/packages/cc/cc/sentencepiece-0.1.99-cp310-cp310-manylinux_2_17_x86_64.whl
