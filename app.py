@@ -1,8 +1,13 @@
 from flask import Flask, request, jsonify
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
+import os
 
 app = Flask(__name__)
+
+# Production configuration
+if os.environ.get('FLASK_ENV') == 'production':
+    app.config['DEBUG'] = False
 
 # Load the NLLB-200 model
 model_name = "facebook/nllb-200-distilled-600M"
